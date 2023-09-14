@@ -1,0 +1,23 @@
+xs = [475,825,1000];
+ys = [775,325,325];
+sel = 1;
+
+x = xs(sel);
+y = ys(sel);
+lambs = linspace(1530,1580,3); #1530-1580
+photon = [510,750,1000]; #510-1596
+leg = cell(6);
+i = 0;
+for (l=[photon(1),photon(2),photon(3),lambs(1),lambs(2),lambs(3)]){
+    loaddata('Waveguide'+num2str(x)+'_'+num2str(y)+'_'+num2str(l));
+    plot (lambda, neff, "lambda", "neff");
+    #plot (vgLambda, ng, "lambda", "ng");
+    holdon;
+    i=i+1;
+    leg{i}="l: "+num2str(l)+"nm";
+}
+legend(leg);
+holdoff;
+
+#exportfigure("./Finals/"+"ng"+num2str(x)+'_'+num2str(y)+"_compactModel");
+exportfigure("./Finals/"+"neff"+num2str(x)+'_'+num2str(y)+"_compactModel");
