@@ -1,0 +1,52 @@
+## Todas las unidades estan dadas en micrometros
+
+clear;
+
+switchtolayout;
+
+Alt_Si3N4=0.9;#0.5
+Anc_Si3N4=1.0;
+Alt_SiO2=1;
+Anc_SiO2=7;
+Alt_Si=Alt_SiO2;
+Anc_Si=Anc_SiO2;
+lamb=1.55;
+
+resol_x_FDE=20;
+resol_y_FDE=20;
+sale_FDE=1;
+
+setanalysis("wavelength",lamb*1e-6);
+
+Geometria;
+Malla;
+
+nmodes=findmodes;
+
+#Alt_ini=0; Alt_fin=0.5; num_Alt=1;
+#Anc_ini=1.0; Anc_fin=1.0; num_Anc=1;
+#lamb_ini=0; lamb_fin=1.5; num_lamb=10;
+
+#Alt_SiN4=linspace(Alt_ini,Alt_fin,num_Alt);
+#Anc_SiN4=linspace(Anc_ini,Anc_fin,num_Anc);
+#lamb=linspace(lamb_ini,lamb_fin,num_lamb);
+
+#near_n=0;
+#n_near=1.52;
+#min_n=1.9;
+#max_n=2.2;
+
+#if(near_n==1){
+#    setanalysis("search","near n");
+#    setanalysis("n",max_n);
+#    setanalysis("use max index",0);
+#}
+#if(near_n==0){
+#    setanalysis("search","in range");
+#    setanalysis("n1",max_n);
+#    setanalysis("n2",min_n);
+#}
+
+#lambda_array=matrix(num_lamb,1);
+
+#sout_lambda="lambda.txt";

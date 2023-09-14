@@ -1,0 +1,19 @@
+switchtolayout;
+
+select("Si3N4");
+set("x",0*1e-6);
+set("x span",Anc_Si3N4*1e-6);
+set("y",0*1e-6);
+set("y span",Alt_Si3N4*1e-6);
+
+select("SiO2");
+set("x",0*1e-6);
+set("x span",Anc_SiO2*1e-6);
+set("y",-(Alt_Si3N4/2.0+Alt_SiO2/2.0)*1e-6);
+set("y span",Alt_SiO2*1e-6);
+
+select("Si");
+set("x",0*1e-6);
+set("x span",Anc_Si*1e-6);
+set("y",-(Alt_Si3N4/2.0+Alt_SiO2+Alt_Si/2.0)*1e-6);
+set("y span",Alt_Si*1e-6);

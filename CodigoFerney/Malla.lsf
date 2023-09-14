@@ -1,0 +1,12 @@
+switchtolayout;
+
+long_x_FDE=Anc_Si3N4+2*sale_FDE;
+long_y_FDE=Alt_Si3N4+2*sale_FDE;
+
+select("FDE");
+set("x",0*1e-6);
+set("x span",long_x_FDE*1e-6);
+set("mesh cells x",long_x_FDE*resol_x_FDE);
+set("y",0*1e-6);
+set("x span",long_x_FDE*1e-6);
+set("mesh cells y",long_y_FDE*resol_y_FDE);
