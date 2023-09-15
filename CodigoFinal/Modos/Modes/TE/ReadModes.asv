@@ -1,0 +1,27 @@
+
+%% getmodes
+clc;
+
+Xs = [300, 475, 650, 825, 1000];
+Ys = [100, 325, 550, 775, 1000];
+Ls = [510,750,1000,1530,1555,1580];
+l = Ls(3);
+y = Ys(1);
+
+
+disp("y: "+string(y))
+disp("l: "+string(l))
+
+ex = 0
+for x = Xs
+    try
+        load("Waveguide"+string(x)+"_"+string(y)+"_"+string(l)+".mat");
+    catch
+        nmodes = 0;
+    end
+    disp("x: "+string(x))
+    disp("  Modos: "+string(nmodes))
+end
+
+if ex=1
+    
